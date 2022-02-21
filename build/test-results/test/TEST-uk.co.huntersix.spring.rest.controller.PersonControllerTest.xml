@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="uk.co.huntersix.spring.rest.controller.PersonControllerTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2022-02-21T17:49:36" hostname="LAPTOP-MR71U3T9" time="0.366">
+  <properties/>
+  <testcase name="shouldReturn404FromServiceWhenPersonNotFound" classname="uk.co.huntersix.spring.rest.controller.PersonControllerTest" time="0.145"/>
+  <testcase name="shouldReturnNoContentFromServiceWhenPersonWithSurnameNotFound" classname="uk.co.huntersix.spring.rest.controller.PersonControllerTest" time="0.012"/>
+  <testcase name="shouldReturnPeopleWithSpesifiedSurnameExistsOnceFromService" classname="uk.co.huntersix.spring.rest.controller.PersonControllerTest" time="0.094"/>
+  <testcase name="shouldReturnConflictWhenPersonNameAndSurnameMatches" classname="uk.co.huntersix.spring.rest.controller.PersonControllerTest" time="0.04"/>
+  <testcase name="shouldReturnBadRequesWhenPersonNameIsEmpty" classname="uk.co.huntersix.spring.rest.controller.PersonControllerTest" time="0.01"/>
+  <testcase name="shouldReturnPersonFromService" classname="uk.co.huntersix.spring.rest.controller.PersonControllerTest" time="0.01"/>
+  <testcase name="shouldReturnBadRequesWhenPersonSurnameIsEmpty" classname="uk.co.huntersix.spring.rest.controller.PersonControllerTest" time="0.009"/>
+  <testcase name="shouldReturnBadRequesWhenPersonNameAndSurnameIsEmpty" classname="uk.co.huntersix.spring.rest.controller.PersonControllerTest" time="0.009"/>
+  <testcase name="shouldReturnCreatedWhenPersonNameAndSurnameValid" classname="uk.co.huntersix.spring.rest.controller.PersonControllerTest" time="0.013"/>
+  <testcase name="shouldReturnPeopleWithSpesifiedSurnameExistsMutlipleFromService" classname="uk.co.huntersix.spring.rest.controller.PersonControllerTest" time="0.012"/>
+  <system-out><![CDATA[23:19:32.931 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class uk.co.huntersix.spring.rest.controller.PersonControllerTest]
+23:19:32.942 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+23:19:32.951 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+23:19:32.971 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [uk.co.huntersix.spring.rest.controller.PersonControllerTest] from class [org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper]
+23:19:32.991 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [uk.co.huntersix.spring.rest.controller.PersonControllerTest], using SpringBootContextLoader
+23:19:32.997 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [uk.co.huntersix.spring.rest.controller.PersonControllerTest]: class path resource [uk/co/huntersix/spring/rest/controller/PersonControllerTest-context.xml] does not exist
+23:19:32.998 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [uk.co.huntersix.spring.rest.controller.PersonControllerTest]: class path resource [uk/co/huntersix/spring/rest/controller/PersonControllerTestContext.groovy] does not exist
+23:19:32.998 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [uk.co.huntersix.spring.rest.controller.PersonControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+23:19:32.999 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [uk.co.huntersix.spring.rest.controller.PersonControllerTest]: PersonControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+23:19:33.075 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [uk.co.huntersix.spring.rest.controller.PersonControllerTest]
+23:19:33.204 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [D:\Spring_Assignment_Workspace\java-spring-restful-api-test\build\classes\java\main\uk\co\huntersix\spring\rest\Application.class]
+23:19:33.205 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration uk.co.huntersix.spring.rest.Application for test class uk.co.huntersix.spring.rest.controller.PersonControllerTest
+23:19:33.207 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - @TestExecutionListeners is not present for class [uk.co.huntersix.spring.rest.controller.PersonControllerTest]: using defaults.
+23:19:33.208 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+23:19:33.221 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+23:19:33.222 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+23:19:33.222 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6975d532, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@79201401, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7b0848ca, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@73d629f1, org.springframework.test.context.support.DirtiesContextTestExecutionListener@34cdaefc, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4db43478, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@74c37b1c, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@36185dd4, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6ffbbfa5, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@38041d6]
+23:19:33.225 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [uk.co.huntersix.spring.rest.controller.PersonControllerTest]
+23:19:33.225 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [uk.co.huntersix.spring.rest.controller.PersonControllerTest]
+23:19:33.226 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [uk.co.huntersix.spring.rest.controller.PersonControllerTest]
+23:19:33.226 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [uk.co.huntersix.spring.rest.controller.PersonControllerTest]
+23:19:33.232 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@1747478c testClass = PersonControllerTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@bd3c678 testClass = PersonControllerTest, locations = '{}', classes = '{class uk.co.huntersix.spring.rest.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@759095fd, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@94037a4a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@9b7f2833, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6aeaffb9, [ImportsContextCustomizer@5431ba4f key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.context.MessageSourceAutoConfiguration, org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration, org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration, org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration, org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration, org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration, org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration, org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration, org.springframework.boot.autoconfigure.jsonb.JsonbAutoConfiguration, org.springframework.boot.autoconfigure.mustache.MustacheAutoConfiguration, org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration, org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration, org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1fc0a297, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@307801f8, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@dc893c67], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+23:19:33.233 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [uk.co.huntersix.spring.rest.controller.PersonControllerTest]
+23:19:33.233 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [uk.co.huntersix.spring.rest.controller.PersonControllerTest]
+23:19:33.367 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true, server.port=-1}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.6.RELEASE)
+
+2022-02-21 23:19:33.707  INFO 7092 --- [    Test worker] u.c.h.s.r.c.PersonControllerTest         : Starting PersonControllerTest on LAPTOP-MR71U3T9 with PID 7092 (started by 91992 in D:\Spring_Assignment_Workspace\java-spring-restful-api-test)
+2022-02-21 23:19:33.710  INFO 7092 --- [    Test worker] u.c.h.s.r.c.PersonControllerTest         : No active profile set, falling back to default profiles: default
+2022-02-21 23:19:35.680  INFO 7092 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-21 23:19:35.937  INFO 7092 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-02-21 23:19:35.937  INFO 7092 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-02-21 23:19:35.950  INFO 7092 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 13 ms
+2022-02-21 23:19:36.003  INFO 7092 --- [    Test worker] u.c.h.s.r.c.PersonControllerTest         : Started PersonControllerTest in 2.615 seconds (JVM running for 4.791)
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /person/nonexistinglastname/nonexistingfirstname
+       Parameters = {}
+          Headers = []
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = uk.co.huntersix.spring.rest.controller.PersonController
+           Method = public org.springframework.http.ResponseEntity<?> uk.co.huntersix.spring.rest.controller.PersonController.person(java.lang.String,java.lang.String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 404
+    Error message = null
+          Headers = []
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /person/smith
+       Parameters = {}
+          Headers = []
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = uk.co.huntersix.spring.rest.controller.PersonController
+           Method = public org.springframework.http.ResponseEntity<?> uk.co.huntersix.spring.rest.controller.PersonController.peopleWithSurname(java.lang.String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 204
+    Error message = null
+          Headers = []
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /person/smith
+       Parameters = {}
+          Headers = []
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = uk.co.huntersix.spring.rest.controller.PersonController
+           Method = public org.springframework.http.ResponseEntity<?> uk.co.huntersix.spring.rest.controller.PersonController.peopleWithSurname(java.lang.String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+     Content type = application/json;charset=UTF-8
+             Body = {"people":[{"id":4,"firstName":"Mary","lastName":"Smith"}]}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /person
+       Parameters = {}
+          Headers = [Content-Type:"application/json"]
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = uk.co.huntersix.spring.rest.controller.PersonController
+           Method = public org.springframework.http.ResponseEntity<?> uk.co.huntersix.spring.rest.controller.PersonController.createPerson(uk.co.huntersix.spring.rest.dto.PersonDetails)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 409
+    Error message = null
+          Headers = []
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /person
+       Parameters = {}
+          Headers = [Content-Type:"application/json"]
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = uk.co.huntersix.spring.rest.controller.PersonController
+           Method = public org.springframework.http.ResponseEntity<?> uk.co.huntersix.spring.rest.controller.PersonController.createPerson(uk.co.huntersix.spring.rest.dto.PersonDetails)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 400
+    Error message = null
+          Headers = []
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /person/smith/mary
+       Parameters = {}
+          Headers = []
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = uk.co.huntersix.spring.rest.controller.PersonController
+           Method = public org.springframework.http.ResponseEntity<?> uk.co.huntersix.spring.rest.controller.PersonController.person(java.lang.String,java.lang.String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+     Content type = application/json;charset=UTF-8
+             Body = {"id":6,"firstName":"Mary","lastName":"Smith"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /person
+       Parameters = {}
+          Headers = [Content-Type:"application/json"]
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = uk.co.huntersix.spring.rest.controller.PersonController
+           Method = public org.springframework.http.ResponseEntity<?> uk.co.huntersix.spring.rest.controller.PersonController.createPerson(uk.co.huntersix.spring.rest.dto.PersonDetails)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 400
+    Error message = null
+          Headers = []
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /person
+       Parameters = {}
+          Headers = [Content-Type:"application/json"]
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = uk.co.huntersix.spring.rest.controller.PersonController
+           Method = public org.springframework.http.ResponseEntity<?> uk.co.huntersix.spring.rest.controller.PersonController.createPerson(uk.co.huntersix.spring.rest.dto.PersonDetails)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 400
+    Error message = null
+          Headers = []
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /person
+       Parameters = {}
+          Headers = [Content-Type:"application/json"]
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = uk.co.huntersix.spring.rest.controller.PersonController
+           Method = public org.springframework.http.ResponseEntity<?> uk.co.huntersix.spring.rest.controller.PersonController.createPerson(uk.co.huntersix.spring.rest.dto.PersonDetails)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Location:"/person/Narayan/Guru"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = /person/Narayan/Guru
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /person/Smith
+       Parameters = {}
+          Headers = []
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = uk.co.huntersix.spring.rest.controller.PersonController
+           Method = public org.springframework.http.ResponseEntity<?> uk.co.huntersix.spring.rest.controller.PersonController.peopleWithSurname(java.lang.String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+     Content type = application/json;charset=UTF-8
+             Body = {"people":[{"id":7,"firstName":"Jhon","lastName":"Smith"},{"id":8,"firstName":"Guru","lastName":"Narayan"}]}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
